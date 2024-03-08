@@ -13,9 +13,9 @@ def product_exp(data):
                     print(text)
                     data.loc[i, 'Body (HTML)'] = text
                     z=0
-                    return data
             except:
                 z=1
+    return data
             
 
 def translated(data):
