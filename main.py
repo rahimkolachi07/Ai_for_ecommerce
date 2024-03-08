@@ -47,7 +47,7 @@ def translated(data):
                         lang=" French"
                         print(lang)
 
-                    text = g_model(f"must translate this text =[ {data['Default content'][i]}] into {lang} language. ")
+                    text = g_model(f"must translate this text  {data['Default content'][i]} into {lang} language. ")
                     print(text)
                     print("zz")
                     data.loc[i, 'Translated content'] = text
