@@ -21,5 +21,6 @@ for m in genai.list_models():
 def g_model(text):
    model = genai.GenerativeModel('gemini-pro')
    response = model.generate_content(text)
+   print("+++")
    time.sleep(2)
    return response.text
