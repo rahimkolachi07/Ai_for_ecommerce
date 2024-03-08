@@ -27,7 +27,7 @@ def translated(data):
         while z==1:
             try:
                 if "str" in str(type(b)):
-                    text = g_model(f"translate this text = {data['Default content'][i]} into = {b} language")
+                    text = g_model(f"must translate this text = {data['Default content'][i]} into = {b} language")
                     print(text)
                     data.loc[i, 'Translated content'] = text
                     z=0
