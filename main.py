@@ -2,6 +2,7 @@ import pandas as pd
 import gradio as gr
 from gemini.gemini import g_model
 import time
+from testing import*
 
 def product_exp(data):
     for i, b in enumerate(data["Body (HTML)"]):
@@ -47,7 +48,8 @@ def translated(data):
                         lang=" French"
                         print(lang)
 
-                    text = g_model(f"must translate this text  {data['Default content'][i]} into {lang} language. ")
+                    text = g_model(f"must translate this text  {data['Default content'][i]} into {lang} language. avoid any symbol like [¿,?,|, %, #,] for first 3 words of sentance.  ")
+                    text=remove_special_character(text)
                     print(text)
                     print("zz")
                     data.loc[i, 'Translated content'] = text
